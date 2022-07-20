@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #heading{
+                text-align: center;
+            }
+            #pose-canvas{
+                position: absolute;
+            }   
+            #pose-video{
+                display: none;
+            }
+            #container-1{
+                float: left;
+                width: 50%;
+                padding: 5px;
+            }
+            #container-2{
+                float: right;
+                width: 40%;
+                padding: 5px;  
+            }      
+            #block-1{
+                text-align: center;
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 1px;
+                margin: 8px 0;
+            }
+            #block-2{
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 10px;
+            }
+            #block-2 input[type=text] {
+                width: 80%;
+                padding: 6px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            #block-2 button{
+                width: 100%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            #block-2 label{
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                font-size: 14px;
+            }
+            #block-3{
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                width: 100%;
+                margin: 8px 0;
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 10px;
+            }
+            #block-3 td, #gait-details th {
+                padding: 8px;
+            }
+            #block-3 td{
+                font-size: 14px;
+            }
+            #block-3 th{
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+        </style>
+        <title>Gait Analysis</title>
+        <link rel="icon" type="image/png" href="img/uoh.png">
+        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    </head>
+    <body>
+        <h1 id="heading">GAIT ANALYSIS</h1>
+            <div id="container-1">
+                <canvas id="pose-canvas"></canvas>
+                <video id="pose-video" loop muted> </video>
+            </div>
+            <div id="container-2">
+                <div id="block-1">
+                    <h2 id="time">0:0</h3>
+                </div>            
+                <div id="block-2">
+                    <label for="height">Height:</label>
+                    <input type="text" id="height" name="height" placeholder="Your height in cm.."><br>
+                    <button type="button" id="bttn3">Initialize Parameters</button>
+                </div>
+                <table id="block-3">
+                    <tr>
+                        <th>Parameters</th>
+                        <th>Value</th>
+                        <th>Enable/Disable</th>
+                    </tr>      
+                    <tr>
+                        <td>Stride Length (cm)</td>
+                        <td id="stride"></td>
+                        <td><button id="bttn4" type="button">Detect</button></td>
+                    </tr>
+                    <tr>
+                        <td>Right Step Length (cm)</td>
+                        <td id="rs-d"></td>
+                        <td><button id="bttn5" type="button">Detect</button></td>
+                    </tr>
+                    <tr>
+                        <td>Left Step Length (cm)</td>
+                        <td id="ls-d"></td>
+                        <td><button id="bttn6" type="button">Detect</button></td>
+                    </tr>
+                    <tr>
+                        <td>Distance between Knees (cm)</td>
+                        <td id="knee-d"></td>
+                        <td><button id="bttn7" type="button">Detect</button></td>
+                    </tr>
+                    <tr>
+                        <td>Distance (cm)</td>
+                        <td id="distance"></td>
+                        <td><button id="bttn8"type="button">Start</button></td>
+                    </tr>
+                </table>
+            </div>
+        <script src="video-script.js"> </script>    
+    </body>
+</html>

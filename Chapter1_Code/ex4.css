@@ -1,0 +1,15 @@
+h1 {font-family:arial;}
+h2 {
+font-family:times new roman;
+color:red;
+left:20px;
+}
+h3 {
+font-family:arial;
+color:blue
+}
+p {
+font-size:14pt;
+font-family:cambria;
+}
+special {color:green }
